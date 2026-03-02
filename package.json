@@ -1,0 +1,25 @@
+{
+  "name": "shinewell-ngo",
+  "version": "1.0.0",
+  "description": "Shine Well NGO Website - MERN Stack",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install-all": "npm install && npm install --prefix client && npm install --prefix server"
+  },
+  "keywords": [
+    "ngo",
+    "mern",
+    "charity",
+    "donation"
+  ],
+  "author": "Antigravity",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
+  }
+}
