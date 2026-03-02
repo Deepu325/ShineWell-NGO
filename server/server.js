@@ -16,8 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: process.env.CLIENT_URL,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    origin: "https://shine-well-ngo.vercel.app",
     credentials: true
 }));
 app.use(morgan('dev'));
