@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import MainLayout from './layouts/MainLayout';
 
 // Pages (to be implemented)
@@ -23,6 +24,7 @@ import AdminDashboard from './pages/admin/Dashboard';
 function App() {
     return (
         <Router>
+            <ScrollToTop />
             <Routes>
                 {/* Public Routes */}
                 <Route path="/" element={<MainLayout><Home /></MainLayout>} />

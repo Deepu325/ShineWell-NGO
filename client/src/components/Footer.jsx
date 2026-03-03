@@ -16,7 +16,7 @@ const Footer = () => {
             { name: 'Our Origin Story', path: '/about' },
             { name: 'Impact Reports', path: '/impact' },
             { name: 'Stories of Change', path: '/blog' },
-            { name: 'Volunteer With Us', path: '/contact' },
+            { name: 'Volunteer With Us', path: '/volunteer' },
             { name: 'Donate Now', path: '/donate' },
         ],
         legal: [
