@@ -8,7 +8,8 @@ const dotenv = require('dotenv');
 const path = require('path');
 
 // Load environment variables
-dotenv.config({ path: path.join(__dirname, '..', '.env') });
+dotenv.config(); // Standard loading
+dotenv.config({ path: path.join(__dirname, '..', '.env') }); // Parent dir fallback for local dev
 
 const app = express();
 
@@ -32,7 +33,10 @@ const limiter = rateLimit({
 app.use('/api/', limiter);
 
 // Database Connection
-mongoose.connect(process.env.MONGODB_URI)
+const mongoURI = process.env.MONGO_URI || process.env.MONGODB_URI;
+console.log("Connecting to MongoDB with URI:", mongoURI ? (mongoURI.substring(0, 20) + "...") : "undefined");
+
+mongoose.connect(mongoURI)
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('MongoDB connection error:', err));
 
