@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
                                 Introduction
                             </h2>
                             <p className="leading-relaxed">
-                                Shine Well NGO ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you visit our website or donate to our cause.
+                                Shinewell NGO ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you visit our website or donate to our cause.
                             </p>
                         </section>
 

@@ -32,7 +32,7 @@ const AdminOverview = () => {
             <div className="flex justify-between items-center">
                 <div>
                     <h1 className="text-3xl font-bold text-primary">Dashboard Overview</h1>
-                    <p className="text-muted">Welcome back. Here's what's happening with Shine Well NGO today.</p>
+                    <p className="text-muted">Welcome back. Here's what's happening with Shinewell NGO today.</p>
                 </div>
                 <div className="flex items-center gap-12 bg-white px-16 py-8 rounded-xl shadow-sm border border-gray-100">
                     <span className="w-12 h-12 bg-green-500 rounded-full animate-pulse"></span>

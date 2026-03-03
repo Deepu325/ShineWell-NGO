@@ -100,7 +100,7 @@ const BlogPost = () => {
                                 </div>
                                 <div className="text-center md:text-left">
                                     <h4 className="text-2xl font-bold mb-2">{blog.author?.name}</h4>
-                                    <p className="text-accent font-bold tracking-widest uppercase text-xs mb-4">Shine Well Editorial Team</p>
+                                    <p className="text-accent font-bold tracking-widest uppercase text-xs mb-4">Shinewell Editorial Team</p>
                                     <p className="text-muted leading-relaxed max-w-xl">
                                         Dedicated to bringing stories from the ground to our supporters. Believe in the power of words to drive social change and empower the voiceless.
                                     </p>

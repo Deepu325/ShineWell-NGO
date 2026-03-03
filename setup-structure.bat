@@ -1,5 +1,5 @@
 @echo off
-echo Creating Shine Well NGO Directory Structure...
+echo Creating Shinewell NGO Directory Structure...
 
 mkdir client 2>nul
 mkdir client\public 2>nul

@@ -34,7 +34,7 @@ const AdminLogin = () => {
                         <Heart className="text-accent fill-accent" size={32} />
                     </div>
                     <h1 className="text-2xl font-heading font-bold text-primary">Admin Control</h1>
-                    <p className="text-muted">Sign in to manage Shine Well NGO</p>
+                    <p className="text-muted">Sign in to manage Shinewell NGO</p>
                 </div>
 
                 <div className="p-40">

@@ -1,5 +1,5 @@
-# Shine Well NGO - Directory Setup Script
-Write-Host "Creating Shine Well NGO Directory Structure..." -ForegroundColor Green
+# Shinewell NGO - Directory Setup Script
+Write-Host "Creating Shinewell NGO Directory Structure..." -ForegroundColor Green
 
 $directories = @(
     "client\public",

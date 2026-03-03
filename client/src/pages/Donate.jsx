@@ -40,7 +40,7 @@ const Donate = () => {
                 key: import.meta.env.VITE_RAZORPAY_KEY_ID || 'rzp_test_placeholder',
                 amount: data.order.amount,
                 currency: data.order.currency,
-                name: 'Shine Well NGO',
+                name: 'Shinewell NGO',
                 description: 'Thank you for your generous donation',
                 order_id: data.order.id,
                 handler: async (response) => {

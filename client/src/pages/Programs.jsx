@@ -7,7 +7,7 @@ import PageHero from '../components/PageHero';
 const Programs = () => {
     const programs = [
         {
-            title: 'ShineEd: Education for All',
+            title: 'ShinewellEd: Education for All',
             subtitle: 'Knowledge is Empowerment',
             desc: 'We provide basic literacy, school supplies, and digital education to children in urban slums and rural villages. Our "Night Schools" cater to working children, ensuring they don\'t miss out on their future.',
             icon: <BookOpen size={32} />,

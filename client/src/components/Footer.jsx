@@ -7,7 +7,7 @@ const Footer = () => {
 
     const sections = {
         mission: [
-            { name: 'ShineEd: Education', path: '/programs' },
+            { name: 'ShinewellEd: Education', path: '/programs' },
             { name: 'HealthCare Reach', path: '/programs' },
             { name: 'Livelihood & Skills', path: '/programs' },
             { name: 'Green Earth Initiative', path: '/programs' },
@@ -40,7 +40,7 @@ const Footer = () => {
                             <div className="bg-accent p-2 rounded-xl group-hover:rotate-12 transition-transform duration-500">
                                 <Heart className="text-primary h-6 w-6 fill-primary" />
                             </div>
-                            <span className="text-2xl font-heading font-bold text-white tracking-tight">Shine Well <span className="text-accent">NGO</span></span>
+                            <span className="text-2xl font-heading font-bold text-white tracking-tight">Shinewell <span className="text-accent">NGO</span></span>
                         </Link>
                         <p className="text-gray-400 text-lg leading-relaxed max-w-sm">
                             Restoring dignity and building hope for the marginalized through sustainable education, healthcare, and livelihood interventions.
@@ -135,7 +135,7 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-xs text-gray-500 font-medium">
-                        &copy; {currentYear} Shine Well NGO. All rights reserved. Registered under Section 12A & 80G.
+                        &copy; {currentYear} Shinewell NGO. All rights reserved. Registered under Section 12A & 80G.
                     </p>
                     <div className="flex items-center gap-8">
                         {sections.legal.map((link, i) => (

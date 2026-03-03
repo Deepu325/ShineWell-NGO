@@ -24,14 +24,14 @@ const Terms = () => {
                     <section>
                         <h2 className="text-2xl font-bold text-primary mb-16">3. Use of Content</h2>
                         <p>
-                            The content on this website, including text, images, and reports, are the property of Shine Well NGO. You may use this information for personal, non-commercial purposes only, provided you give due credit to the organization.
+                            The content on this website, including text, images, and reports, are the property of Shinewell NGO. You may use this information for personal, non-commercial purposes only, provided you give due credit to the organization.
                         </p>
                     </section>
 
                     <section>
                         <h2 className="text-2xl font-bold text-primary mb-16">4. Limitation of Liability</h2>
                         <p>
-                            Shine Well NGO shall not be liable for any damages arising out of the use or inability to use the materials on this website. We make no warranties regarding the accuracy or completeness of the content.
+                            Shinewell NGO shall not be liable for any damages arising out of the use or inability to use the materials on this website. We make no warranties regarding the accuracy or completeness of the content.
                         </p>
                     </section>
 

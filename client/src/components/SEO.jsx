@@ -1,8 +1,8 @@
 import React from 'react';
 
 const SEO = ({ title, description, image, url }) => {
-    const siteTitle = title ? `${title} | Shine Well NGO` : 'Shine Well NGO | Building Trust, Empowering Lives';
-    const siteDescription = description || 'Shine Well NGO is dedicated to creating lasting impact through education, healthcare, and community support in India.';
+    const siteTitle = title ? `${title} | Shinewell NGO` : 'Shinewell NGO | Building Trust, Empowering Lives';
+    const siteDescription = description || 'Shinewell NGO is dedicated to creating lasting impact through education, healthcare, and community support in India.';
     const siteImage = image || 'https://shinewellngo.org/og-image.jpg';
     const siteUrl = url ? `https://shinewellngo.org${url}` : 'https://shinewellngo.org';
 
@@ -32,7 +32,7 @@ const SEO = ({ title, description, image, url }) => {
                 {JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "NGO",
-                    "name": "Shine Well NGO",
+                    "name": "Shinewell NGO",
                     "url": "https://shinewellngo.org",
                     "logo": "https://shinewellngo.org/logo.png",
                     "description": "Dedicated to community empowerment in India.",

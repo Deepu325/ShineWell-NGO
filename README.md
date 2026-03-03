@@ -1,4 +1,4 @@
-# Shine Well NGO - MERN Website
+# Shinewell NGO - MERN Website
 
 A premium, production-ready NGO growth machine built with the MERN stack.
 
@@ -78,4 +78,4 @@ Current login available at `/admin/login`.
 
 ---
 
-Built with ❤️ by Antigravity for Shine Well NGO.
+Built with ❤️ by Antigravity for Shinewell NGO.

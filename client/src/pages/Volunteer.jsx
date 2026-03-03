@@ -10,7 +10,8 @@ const Volunteer = () => {
         name: '',
         email: '',
         phone: '',
-        interestArea: '',
+        city: '',
+        availability: '',
         message: ''
     });
     const [loading, setLoading] = useState(false);
@@ -23,12 +24,36 @@ const Volunteer = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
+
+        const data = {
+            from_name: formData.name,
+            from_email: formData.email,
+            phone: formData.phone,
+            city: formData.city,
+            availability: formData.availability,
+            message: formData.message,
+            time: new Date().toLocaleString()
+        };
+
         try {
-            await api.post('/volunteers/register', formData);
+            // Note: Using window.emailjs because script was added to index.html
+            await window.emailjs.send("service_123", "template_b3qbxsr", data);
+
+            // Also keep the API call if they want to store it in DB
+            try {
+                await api.post('/volunteers/register', {
+                    ...formData,
+                    interestArea: 'Volunteer' // Defaulting since we removed the field to match user request
+                });
+            } catch (apiErr) {
+                console.warn('DB Storage failed, but email sent:', apiErr);
+            }
+
             setSubmitted(true);
             toast.success('Application submitted successfully!');
         } catch (err) {
-            toast.error(err.response?.data?.message || 'Submission failed');
+            console.error('EmailJS Error:', err);
+            toast.error('Failed to send application. Please try again.');
         } finally {
             setLoading(false);
         }
@@ -50,7 +75,7 @@ const Volunteer = () => {
                     </div>
                     <h2 className="text-3xl font-bold mb-4">Application Received!</h2>
                     <p className="text-muted text-lg mb-10">
-                        Thank you for your interest in volunteering with Shine Well NGO. Our team will review your application and get back to you within 3-5 business days.
+                        Thank you for your interest in volunteering with Shinewell NGO. Our team will review your application and get back to you within 3-5 business days.
                     </p>
                     <button onClick={() => setSubmitted(false)} className="btn-primary">
                         Back to Volunteer Page
@@ -118,10 +143,11 @@ const Volunteer = () => {
                                 className="bg-white p-8 md:p-12 rounded-card shadow-elevated border border-gray-100"
                             >
                                 <h3 className="text-2xl md:text-3xl font-heading font-bold mb-8">Volunteer <span className="text-accent underline decoration-accent/30 underline-offset-4">Registration</span></h3>
-                                <form onSubmit={handleSubmit} className="space-y-6">
+                                <form id="volunteerForm" onSubmit={handleSubmit} className="space-y-6">
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold text-primary uppercase tracking-widest">Full Name</label>
                                         <input
+                                            id="v_name"
                                             type="text"
                                             name="name"
                                             required
@@ -135,6 +161,7 @@ const Volunteer = () => {
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-primary uppercase tracking-widest">Email Address</label>
                                             <input
+                                                id="v_email"
                                                 type="email"
                                                 name="email"
                                                 required
@@ -147,6 +174,7 @@ const Volunteer = () => {
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-primary uppercase tracking-widest">Phone Number</label>
                                             <input
+                                                id="v_phone"
                                                 type="tel"
                                                 name="phone"
                                                 required
@@ -157,26 +185,42 @@ const Volunteer = () => {
                                             />
                                         </div>
                                     </div>
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold text-primary uppercase tracking-widest">Interest Area</label>
-                                        <select
-                                            name="interestArea"
-                                            required
-                                            className="input-field px-6 py-4 appearance-none"
-                                            value={formData.interestArea}
-                                            onChange={handleChange}
-                                        >
-                                            <option value="">Select an area of impact</option>
-                                            <option value="Education">Education & Teaching</option>
-                                            <option value="Healthcare">Healthcare Assistance</option>
-                                            <option value="Digital">Digital & Content Creation</option>
-                                            <option value="Fundraising">Events & Fundraising</option>
-                                            <option value="Admin">Administration Support</option>
-                                        </select>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div className="space-y-2">
+                                            <label className="text-xs font-bold text-primary uppercase tracking-widest">City</label>
+                                            <input
+                                                id="v_city"
+                                                type="text"
+                                                name="city"
+                                                required
+                                                className="input-field px-6 py-4"
+                                                value={formData.city}
+                                                onChange={handleChange}
+                                                placeholder="Your City"
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-xs font-bold text-primary uppercase tracking-widest">Availability</label>
+                                            <select
+                                                id="v_availability"
+                                                name="availability"
+                                                required
+                                                className="input-field px-6 py-4 appearance-none"
+                                                value={formData.availability}
+                                                onChange={handleChange}
+                                            >
+                                                <option value="">Select Availability</option>
+                                                <option value="Part-time">Part-time</option>
+                                                <option value="Full-time">Full-time</option>
+                                                <option value="Weekends">Weekends Only</option>
+                                                <option value="Remote">Remote / Online</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold text-primary uppercase tracking-widest">Why do you want to join us?</label>
                                         <textarea
+                                            id="v_message"
                                             name="message"
                                             rows="4"
                                             className="input-field px-6 py-4 resize-none"

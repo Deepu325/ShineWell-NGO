@@ -1,6 +1,6 @@
 # 📋 PRD — Product Requirements Document
 
-**Product:** Shine Well NGO Website (MERN)  
+**Product:** Shinewell NGO Website (MERN)  
 **Objective:** Build a high-trust, high-conversion NGO platform that converts visitors into donors, volunteers, and partners.
 
 ---

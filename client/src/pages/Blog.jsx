@@ -102,7 +102,7 @@ const Blog = () => {
                                 <div className="p-6 md:p-8 flex flex-col flex-grow">
                                     <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-accent mb-4">
                                         <span className="flex items-center gap-2"><Calendar size={12} /> {new Date(blog.createdAt).toLocaleDateString()}</span>
-                                        <span className="flex items-center gap-2 text-muted"><User size={12} /> {blog.author?.name || 'Team Shine'}</span>
+                                        <span className="flex items-center gap-2 text-muted"><User size={12} /> {blog.author?.name || 'Team Shinewell'}</span>
                                     </div>
                                     <h3 className="text-xl font-heading font-bold mb-4 group-hover:text-accent transition-colors leading-tight line-clamp-2">
                                         <Link to={`/blog/${blog.slug}`}>{blog.title}</Link>

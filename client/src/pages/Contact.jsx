@@ -8,6 +8,7 @@ const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        phone: '',
         subject: '',
         message: ''
     });
@@ -16,11 +17,29 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
-            toast.success('Message sent! We will get back to you soon.');
-            setFormData({ name: '', email: '', subject: '', message: '' });
-        }, 1500);
+
+        const data = {
+            from_name: formData.name,
+            from_email: formData.email,
+            phone: formData.phone,
+            subject: formData.subject,
+            message: formData.message,
+            time: new Date().toLocaleString()
+        };
+
+        // Note: Using window.emailjs because script was added to index.html
+        window.emailjs.send("service_123", "template_ligatr7", data)
+            .then(() => {
+                toast.success('Message sent! We will get back to you soon.');
+                setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+            })
+            .catch((error) => {
+                console.error('EmailJS Error:', error);
+                toast.error('Failed to send message. Please try again.');
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     };
 
     return (
@@ -79,13 +98,14 @@ const Contact = () => {
 
                         {/* Contact Form Column */}
                         <div className="lg:col-span-2">
-                            <form onSubmit={handleSubmit} className="bg-white p-8 lg:p-12 rounded-card border border-border shadow-elevated grid gap-6">
+                            <form id="contactForm" onSubmit={handleSubmit} className="bg-white p-8 lg:p-12 rounded-card border border-border shadow-elevated grid gap-6">
                                 <h3 className="text-2xl font-heading font-bold mb-4">Send us a <span className="text-accent underline decoration-accent/30 underline-offset-4">Message</span></h3>
 
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold text-primary uppercase tracking-widest">Full Name</label>
                                         <input
+                                            id="name"
                                             type="text"
                                             required
                                             className="input-field px-6 py-4"
@@ -97,6 +117,7 @@ const Contact = () => {
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold text-primary uppercase tracking-widest">Email Address</label>
                                         <input
+                                            id="email"
                                             type="email"
                                             required
                                             className="input-field px-6 py-4"
@@ -105,6 +126,19 @@ const Contact = () => {
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                         />
                                     </div>
+                                </div>
+
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold text-primary uppercase tracking-widest">Phone Number</label>
+                                    <input
+                                        id="phone"
+                                        type="tel"
+                                        required
+                                        className="input-field px-6 py-4"
+                                        placeholder="+91 XXXXX XXXXX"
+                                        value={formData.phone}
+                                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                    />
                                 </div>
 
                                 <div className="space-y-2">
@@ -122,6 +156,7 @@ const Contact = () => {
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold text-primary uppercase tracking-widest">Message</label>
                                     <textarea
+                                        id="message"
                                         rows="5"
                                         required
                                         className="input-field px-6 py-4 resize-none"

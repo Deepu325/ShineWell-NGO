@@ -17,7 +17,7 @@ const About = () => {
                 badge="Our Journey"
                 title="A Decade of"
                 titleAccent="Dignity"
-                description="Founded in 2014, Shine Well NGO has evolved from a small community initiative to a nationwide movement dedicated to empowering the marginalized."
+                description="Founded in 2014, Shinewell NGO has evolved from a small community initiative to a nationwide movement dedicated to empowering the marginalized."
                 image="https://images.unsplash.com/photo-1524069290683-0457abfe42c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
             />
 
@@ -73,7 +73,7 @@ const About = () => {
                     </div>
 
                     <div>
-                        <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">The Shine Well Story</span>
+                        <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">The Shinewell Story</span>
                         <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8 text-primary leading-tight">
                             Building Brighter Futures <br /><span className="text-accent italic">Step by Step.</span>
                         </h2>

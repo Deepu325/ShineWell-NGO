@@ -33,7 +33,7 @@ const Navbar = () => {
                         <Heart className="text-accent h-5 w-5 fill-accent" />
                     </div>
                     <span className={`text-xl font-heading font-bold tracking-tight ${scrolled ? 'text-primary' : 'text-white'}`}>
-                        Shine Well <span className="text-accent">NGO</span>
+                        Shinewell <span className="text-accent">NGO</span>
                     </span>
                 </Link>
 

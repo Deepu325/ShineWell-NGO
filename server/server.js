@@ -46,7 +46,7 @@ app.use('/api/impact', require('./routes/impactRoutes'));
 
 // Root path for testing
 app.get('/', (req, res) => {
-    res.send('Shine Well NGO API is running...');
+    res.send('Shinewell NGO API is running...');
 });
 
 // Error handling middleware

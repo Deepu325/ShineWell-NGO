@@ -1,7 +1,7 @@
 {
     "name": "shinewell-ngo-server",
     "version": "1.0.0",
-    "description": "Backend for Shine Well NGO",
+    "description": "Backend for Shinewell NGO",
     "main": "server.js",
     "scripts": {
         "start": "node server.js",

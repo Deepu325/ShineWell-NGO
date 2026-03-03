@@ -17,7 +17,7 @@ const Home = () => {
 
     const programs = [
         {
-            title: 'Project ShineEd',
+            title: 'Project ShinewellEd',
             category: 'Education',
             desc: 'Providing school kits, digital literacy, and scholarships for children in urban slums.',
             img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -38,7 +38,7 @@ const Home = () => {
 
     const testimonials = [
         {
-            quote: "Shine Well didn't just give us food; they gave us a way to earn it with dignity.",
+            quote: "Shinewell didn't just give us food; they gave us a way to earn it with dignity.",
             author: "Anjali Sharma",
             role: "Skills Project Beneficiary"
         },
@@ -77,7 +77,7 @@ const Home = () => {
                             Building <span className="underline decoration-accent/40 decoration-8 underline-offset-4">Hope</span>.
                         </h1>
                         <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-xl leading-relaxed">
-                            Join Shine Well NGO in our mission to provide education, healthcare, and sustainable livelihood to those who need it most.
+                            Join Shinewell NGO in our mission to provide education, healthcare, and sustainable livelihood to those who need it most.
                         </p>
                         <div className="flex flex-wrap gap-6">
                             <Link to="/donate" className="btn-accent btn-lg group">
@@ -135,7 +135,7 @@ const Home = () => {
                             Driven by <span className="text-accent">Purpose</span>, <br />Measured by Impact.
                         </h2>
                         <p className="text-lg text-muted mb-8 leading-relaxed">
-                            Founded in 2014, Shine Well NGO started with a simple belief: that poverty is not just a lack of resources, but a lack of opportunity. We work across 12 states in India to bridge this gap.
+                            Founded in 2014, Shinewell NGO started with a simple belief: that poverty is not just a lack of resources, but a lack of opportunity. We work across 12 states in India to bridge this gap.
                         </p>
                         <ul className="space-y-4 mb-10">
                             {[
@@ -155,7 +155,7 @@ const Home = () => {
                     <div className="order-1 lg:order-2">
                         <img
                             src="https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                            alt="The Shine Well Team"
+                            alt="The Shinewell Team"
                             className="rounded-panel w-full aspect-square object-cover shadow-elevated"
                         />
                     </div>
@@ -302,7 +302,7 @@ const Home = () => {
                         <Heart size={64} className="text-accent mb-8 animate-float" />
                         <h2 className="text-4xl md:text-7xl font-heading font-bold mb-8 max-w-4xl">You hold the power to <span className="text-accent">Change</span> a Life.</h2>
                         <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-                            Whether you donate or volunteer, you are directly changing the course of a family's future. Join the Shine Well movement today.
+                            Whether you donate or volunteer, you are directly changing the course of a family's future. Join the Shinewell movement today.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-6">
                             <Link to="/donate" className="btn-accent btn-lg">Every Rupee Counts</Link>

@@ -1,7 +1,7 @@
 {
   "name": "shinewell-ngo",
   "version": "1.0.0",
-  "description": "Shine Well NGO Website - MERN Stack",
+  "description": "Shinewell NGO Website - MERN Stack",
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
