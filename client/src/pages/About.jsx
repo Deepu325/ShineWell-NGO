@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Target, Users, Award, Heart, CheckCircle, Quote } from 'lucide-react';
+import PageHero from '../components/PageHero';
 
 const About = () => {
     const values = [
@@ -12,35 +13,13 @@ const About = () => {
 
     return (
         <div className="bg-white">
-            {/* Hero Section */}
-            <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-primary text-white overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src="https://images.unsplash.com/photo-1524069290683-0457abfe42c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                        alt="About Us Background"
-                        className="w-full h-full object-cover opacity-20"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary"></div>
-                </div>
-
-                <div className="container-custom relative z-10 text-center max-w-4xl mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <span className="inline-block px-4 py-1.5 bg-accent/20 text-accent rounded-full text-xs font-bold tracking-widest uppercase mb-6 border border-accent/30">
-                            Our Journey
-                        </span>
-                        <h1 className="text-5xl md:text-7xl font-heading font-bold mb-8 leading-tight">
-                            A Decade of <span className="text-accent underline decoration-4 underline-offset-8">Dignity</span> and Hope.
-                        </h1>
-                        <p className="text-xl text-gray-300 leading-relaxed">
-                            Founded in 2014, Shine Well NGO has evolved from a small community initiative to a nationwide movement dedicated to empowering the marginalized.
-                        </p>
-                    </motion.div>
-                </div>
-            </section>
+            <PageHero
+                badge="Our Journey"
+                title="A Decade of"
+                titleAccent="Dignity"
+                description="Founded in 2014, Shine Well NGO has evolved from a small community initiative to a nationwide movement dedicated to empowering the marginalized."
+                image="https://images.unsplash.com/photo-1524069290683-0457abfe42c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            />
 
             {/* Mission & Vision Section */}
             <section className="layout-section">

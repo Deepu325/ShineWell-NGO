@@ -21,8 +21,8 @@ const AdminDonations = () => {
     }, []);
 
     return (
-        <div className="p-32">
-            <div className="flex justify-between items-center mb-32">
+        <div className="p-8 lg:p-12">
+            <div className="flex justify-between items-center mb-8">
                 <div>
                     <h1 className="text-3xl font-bold text-primary">Donation Management</h1>
                     <p className="text-muted">Track and verify all contributions</p>
@@ -75,8 +75,8 @@ const AdminDonations = () => {
                                     </td>
                                     <td className="px-24 py-20">
                                         <span className={`px-12 py-4 rounded-full text-xs font-bold uppercase tracking-widest ${donation.status === 'completed' ? 'bg-green-100 text-green-700' :
-                                                donation.status === 'pending' ? 'bg-yellow-100 text-yellow-700' :
-                                                    'bg-red-100 text-red-700'
+                                            donation.status === 'pending' ? 'bg-yellow-100 text-yellow-700' :
+                                                'bg-red-100 text-red-700'
                                             }`}>
                                             {donation.status}
                                         </span>

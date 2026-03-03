@@ -33,8 +33,8 @@ const AdminVolunteers = () => {
     };
 
     return (
-        <div className="p-32">
-            <div className="mb-32">
+        <div className="p-8 lg:p-12">
+            <div className="mb-8">
                 <h1 className="text-3xl font-bold text-primary">Volunteer Management</h1>
                 <p className="text-muted">Review and onboard new changemakers</p>
             </div>
@@ -73,9 +73,9 @@ const AdminVolunteers = () => {
                                     </td>
                                     <td className="px-24 py-20">
                                         <span className={`px-12 py-4 rounded-full text-xs font-bold uppercase tracking-widest ${v.status === 'active' ? 'bg-green-100 text-green-700' :
-                                                v.status === 'pending' ? 'bg-yellow-100 text-yellow-700' :
-                                                    v.status === 'contacted' ? 'bg-blue-100 text-blue-700' :
-                                                        'bg-red-100 text-red-700'
+                                            v.status === 'pending' ? 'bg-yellow-100 text-yellow-700' :
+                                                v.status === 'contacted' ? 'bg-blue-100 text-blue-700' :
+                                                    'bg-red-100 text-red-700'
                                             }`}>
                                             {v.status}
                                         </span>
