@@ -27,7 +27,7 @@ const Programs = () => {
             subtitle: 'Towards Self-Reliance',
             desc: 'Vocational training in tailoring, computer operations, and basic accounting for women and unemployed youth. We also provide seed funding for small community-led startups.',
             icon: <Briefcase size={32} />,
-            image: 'https://images.unsplash.com/photo-1581578731522-aa0042f4fd41?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+            image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
             impact: '5,000+ Skilled professionals'
         },
         {
