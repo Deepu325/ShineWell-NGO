@@ -60,7 +60,7 @@ const Programs = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
-                                className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${idx % 2 !== 0 ? 'lg:direction-reverse' : ''}`}
+                                className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center`}
                             >
                                 <div className={`${idx % 2 !== 0 ? 'lg:order-2' : 'lg:order-1'}`}>
                                     <div className="inline-flex items-center justify-center w-16 h-16 bg-secondary text-accent rounded-2xl mb-6 shadow-sm">

@@ -28,7 +28,7 @@ const AdminOverview = () => {
     ];
 
     return (
-        <div className="p-32 space-y-32">
+        <div className="p-8 lg:p-12 space-y-8 lg:space-y-12">
             <div className="flex justify-between items-center">
                 <div>
                     <h1 className="text-3xl font-bold text-primary">Dashboard Overview</h1>
@@ -74,8 +74,8 @@ const AdminOverview = () => {
                         {recentActivity.map((activity, i) => (
                             <div key={i} className="p-24 flex items-center gap-16 hover:bg-secondary/20 transition-colors">
                                 <div className={`p-10 rounded-full ${activity.type === 'donation' ? 'bg-blue-100 text-blue-600' :
-                                        activity.type === 'volunteer' ? 'bg-green-100 text-green-600' :
-                                            'bg-orange-100 text-orange-600'
+                                    activity.type === 'volunteer' ? 'bg-green-100 text-green-600' :
+                                        'bg-orange-100 text-orange-600'
                                     }`}>
                                     {activity.type === 'donation' ? <CreditCard size={20} /> :
                                         activity.type === 'volunteer' ? <Users size={20} /> :

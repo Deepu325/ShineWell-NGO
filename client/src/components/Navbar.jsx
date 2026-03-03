@@ -45,12 +45,12 @@ const Navbar = () => {
                                 key={link.path}
                                 to={link.path}
                                 className={`text-sm font-bold tracking-wide transition-all duration-300 relative group/link ${scrolled
-                                    ? (location.pathname === link.path ? 'text-accent' : 'text-primary/70 hover:text-primary')
-                                    : (location.pathname === link.path ? 'text-accent' : 'text-white/80 hover:text-white')
+                                    ? (location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path)) ? 'text-accent' : 'text-primary/70 hover:text-primary')
+                                    : (location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path)) ? 'text-accent' : 'text-white/80 hover:text-white')
                                     }`}
                             >
                                 {link.name}
-                                <span className={`absolute -bottom-2 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/link:w-full ${location.pathname === link.path ? 'w-full' : ''}`} />
+                                <span className={`absolute -bottom-2 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/link:w-full ${location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path)) ? 'w-full' : ''}`} />
                             </Link>
                         ))}
                     </div>
@@ -72,7 +72,7 @@ const Navbar = () => {
                         <Link
                             key={link.path}
                             to={link.path}
-                            className={`text-base font-bold tracking-wide ${location.pathname === link.path ? 'text-accent' : 'text-primary'}`}
+                            className={`text-base font-bold tracking-wide ${location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path)) ? 'text-accent' : 'text-primary'}`}
                             onClick={() => setIsOpen(false)}
                         >
                             {link.name}

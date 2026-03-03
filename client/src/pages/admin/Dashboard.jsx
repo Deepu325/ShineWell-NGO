@@ -19,7 +19,7 @@ import AdminDonations from './AdminDonations';
 import AdminBlogs from './AdminBlogs';
 import AdminVolunteers from './AdminVolunteers';
 
-const AdminCampaigns = () => <div className="p-32"><h1>Campaigns</h1><p>Manage active fundraising goals.</p></div>;
+const AdminCampaigns = () => <div className="p-8 lg:p-12"><h1>Campaigns</h1><p>Manage active fundraising goals.</p></div>;
 
 const Dashboard = () => {
     const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -59,7 +59,7 @@ const Dashboard = () => {
         <div className="flex h-screen bg-secondary overflow-hidden">
             {/* Sidebar */}
             <aside
-                className={`${sidebarOpen ? 'w-260' : 'w-0'} bg-primary text-white transition-all duration-300 relative flex flex-col`}
+                className={`${sidebarOpen ? 'w-64 lg:w-72' : 'w-0'} bg-primary text-white transition-all duration-300 relative flex flex-col`}
             >
                 <div className="p-24 flex items-center gap-12 border-b border-white/10">
                     <div className="bg-accent p-8 rounded-lg">
@@ -99,7 +99,7 @@ const Dashboard = () => {
             {/* Main Content */}
             <main className="flex-grow flex flex-col overflow-hidden">
                 {/* Header */}
-                <header className="bg-white h-80 flex items-center justify-between px-32 shadow-sm border-b border-gray-100 shrink-0">
+                <header className="bg-white h-20 flex items-center justify-between px-8 lg:px-12 shadow-sm border-b border-gray-100 shrink-0">
                     <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-primary hover:bg-secondary p-8 rounded-lg">
                         {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
