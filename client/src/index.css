@@ -129,3 +129,132 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Gallery Auto-Sliding */
+.gallery-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.gallery-wrapper::before,
+.gallery-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.gallery-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #F6F1E9 0%, transparent 100%);
+}
+
+.gallery-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #F6F1E9 0%, transparent 100%);
+}
+
+.gallery-track {
+  display: flex;
+  gap: 1.25rem;
+  animation: gallery-scroll 40s linear infinite;
+  width: max-content;
+}
+
+.gallery-track.paused {
+  animation-play-state: paused;
+}
+
+.gallery-item {
+  flex-shrink: 0;
+  width: 320px;
+  height: 240px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  user-select: none;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11, 31, 58, 0.85) 0%, rgba(11, 31, 58, 0.2) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-label {
+  color: #C6A75E;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.25rem;
+}
+
+@keyframes gallery-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Gallery responsive sizes */
+@media (max-width: 640px) {
+  .gallery-item {
+    width: 260px;
+    height: 195px;
+    border-radius: 1rem;
+  }
+
+  .gallery-track {
+    gap: 0.75rem;
+    animation-duration: 30s;
+  }
+
+  .gallery-wrapper::before,
+  .gallery-wrapper::after {
+    width: 40px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .gallery-item {
+    width: 300px;
+    height: 225px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .gallery-item {
+    width: 360px;
+    height: 270px;
+  }
+}
