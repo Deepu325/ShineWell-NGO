@@ -150,12 +150,12 @@
 
 .gallery-wrapper::before {
   left: 0;
-  background: linear-gradient(to right, #F6F1E9 0%, transparent 100%);
+  background: linear-gradient(to right, rgba(246, 241, 233, 0.1) 0%, transparent 100%);
 }
 
 .gallery-wrapper::after {
   right: 0;
-  background: linear-gradient(to left, #F6F1E9 0%, transparent 100%);
+  background: linear-gradient(to left, rgba(246, 241, 233, 0.1) 0%, transparent 100%);
 }
 
 .gallery-track {
