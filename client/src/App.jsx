@@ -12,6 +12,8 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
 import Donate from './pages/Donate';
+import Gallery from './pages/Gallery';
+
 import ThankYou from './pages/ThankYou';
 import Volunteer from './pages/Volunteer';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -35,6 +37,8 @@ function App() {
                 <Route path="/blog/:slug" element={<MainLayout><BlogPost /></MainLayout>} />
                 <Route path="/contact" element={<MainLayout><Contact /></MainLayout>} />
                 <Route path="/donate" element={<MainLayout><Donate /></MainLayout>} />
+                <Route path="/gallery" element={<MainLayout><Gallery /></MainLayout>} />
+
                 <Route path="/thank-you" element={<MainLayout><ThankYou /></MainLayout>} />
                 <Route path="/volunteer" element={<MainLayout><Volunteer /></MainLayout>} />
                 <Route path="/privacy" element={<MainLayout><PrivacyPolicy /></MainLayout>} />

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import {
-    BarChart,
-    Donut,
     TrendingUp,
     Users,
     Heart,
     AlertCircle,
     ArrowUpRight,
     ArrowDownRight,
-    CreditCard
+    CreditCard,
+    Plus,
+    FileText,
+    Flag
 } from 'lucide-react';
 import api from '../../services/api';
 
@@ -34,46 +35,46 @@ const AdminOverview = () => {
                     <h1 className="text-3xl font-bold text-primary">Dashboard Overview</h1>
                     <p className="text-muted">Welcome back. Here's what's happening with Shinewell NGO today.</p>
                 </div>
-                <div className="flex items-center gap-12 bg-white px-16 py-8 rounded-xl shadow-sm border border-gray-100">
-                    <span className="w-12 h-12 bg-green-500 rounded-full animate-pulse"></span>
+                <div className="flex items-center gap-3 bg-white px-4 py-2 rounded-xl shadow-sm border border-gray-100">
+                    <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
                     <span className="text-sm font-bold text-primary">Live System Status</span>
                 </div>
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
                     { label: 'Total Donations', value: stats.totalDonations, icon: <CreditCard />, color: 'text-blue-600', trend: '+12.5%', isUp: true },
                     { label: 'Active Donors', value: stats.totalDonors, icon: <Heart />, color: 'text-red-600', trend: '+5.2%', isUp: true },
                     { label: 'Campaigns', value: stats.activeCampaigns, icon: <TrendingUp />, color: 'text-accent', trend: '-2.1%', isUp: false },
                     { label: 'Volunteers', value: stats.volunteers, icon: <Users />, color: 'text-green-600', trend: '+15.3%', isUp: true },
                 ].map((stat, i) => (
-                    <div key={i} className="bg-white p-24 rounded-card shadow-sm border border-gray-100">
-                        <div className="flex justify-between items-start mb-16">
-                            <div className={`p-12 rounded-xl bg-opacity-10 bg-current ${stat.color}`}>
+                    <div key={i} className="bg-white p-6 rounded-card shadow-sm border border-gray-100">
+                        <div className="flex justify-between items-start mb-4">
+                            <div className={`p-3 rounded-xl bg-opacity-10 bg-current ${stat.color}`}>
                                 {React.cloneElement(stat.icon, { size: 24 })}
                             </div>
-                            <div className={`flex items-center gap-4 text-sm font-bold ${stat.isUp ? 'text-green-600' : 'text-red-600'}`}>
+                            <div className={`flex items-center gap-1 text-sm font-bold ${stat.isUp ? 'text-green-600' : 'text-red-600'}`}>
                                 {stat.trend} {stat.isUp ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />}
                             </div>
                         </div>
-                        <h3 className="text-2xl font-bold text-primary mb-4">{stat.value}</h3>
+                        <h3 className="text-2xl font-bold text-primary mb-1">{stat.value}</h3>
                         <p className="text-sm text-muted font-medium">{stat.label}</p>
                     </div>
                 ))}
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-32">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Recent Activity */}
                 <div className="lg:col-span-2 bg-white rounded-card shadow-sm border border-gray-100 overflow-hidden">
-                    <div className="p-24 border-b border-gray-100 flex justify-between items-center">
+                    <div className="p-6 border-b border-gray-100 flex justify-between items-center">
                         <h3 className="font-bold text-xl">Recent Activity</h3>
                         <button className="text-sm text-accent font-bold hover:underline">View All</button>
                     </div>
                     <div className="divide-y divide-gray-100">
                         {recentActivity.map((activity, i) => (
-                            <div key={i} className="p-24 flex items-center gap-16 hover:bg-secondary/20 transition-colors">
-                                <div className={`p-10 rounded-full ${activity.type === 'donation' ? 'bg-blue-100 text-blue-600' :
+                            <div key={i} className="p-5 flex items-center gap-4 hover:bg-secondary/20 transition-colors">
+                                <div className={`p-2.5 rounded-full ${activity.type === 'donation' ? 'bg-blue-100 text-blue-600' :
                                     activity.type === 'volunteer' ? 'bg-green-100 text-green-600' :
                                         'bg-orange-100 text-orange-600'
                                     }`}>
@@ -96,18 +97,18 @@ const AdminOverview = () => {
                 </div>
 
                 {/* Quick Actions */}
-                <div className="space-y-32">
-                    <div className="bg-white p-24 rounded-card shadow-sm border border-gray-100">
-                        <h3 className="font-bold text-xl mb-24">Quick Actions</h3>
-                        <div className="grid grid-cols-2 gap-12">
-                            <button className="flex flex-col items-center gap-12 p-16 rounded-xl hover:bg-secondary transition-colors border border-gray-50">
-                                <div className="p-8 bg-accent/20 text-accent rounded-lg">
+                <div className="space-y-8">
+                    <div className="bg-white p-6 rounded-card shadow-sm border border-gray-100">
+                        <h3 className="font-bold text-xl mb-6">Quick Actions</h3>
+                        <div className="grid grid-cols-2 gap-3">
+                            <button className="flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-secondary transition-colors border border-gray-50">
+                                <div className="p-2 bg-accent/20 text-accent rounded-lg">
                                     <Plus size={20} />
                                 </div>
                                 <span className="text-xs font-bold text-primary">New Post</span>
                             </button>
-                            <button className="flex flex-col items-center gap-12 p-16 rounded-xl hover:bg-secondary transition-colors border border-gray-50">
-                                <div className="p-8 bg-primary text-white rounded-lg">
+                            <button className="flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-secondary transition-colors border border-gray-50">
+                                <div className="p-2 bg-primary text-white rounded-lg">
                                     <Flag size={20} />
                                 </div>
                                 <span className="text-xs font-bold text-primary">Create Campaign</span>
@@ -115,21 +116,21 @@ const AdminOverview = () => {
                         </div>
                     </div>
 
-                    <div className="bg-primary p-24 rounded-card shadow-sm text-white relative overflow-hidden">
+                    <div className="bg-primary p-6 rounded-card shadow-sm text-white relative overflow-hidden">
                         <div className="relative z-10">
-                            <div className="flex items-center gap-8 mb-16 text-accent">
+                            <div className="flex items-center gap-2 mb-4 text-accent">
                                 <AlertCircle size={20} />
                                 <span className="font-bold text-sm uppercase tracking-widest">Urgent Notice</span>
                             </div>
-                            <h4 className="font-bold text-lg mb-8">System Audit Required</h4>
-                            <p className="text-sm text-gray-300 mb-20 line-clamp-2">
+                            <h4 className="font-bold text-lg mb-2">System Audit Required</h4>
+                            <p className="text-sm text-gray-300 mb-5 line-clamp-2">
                                 Monthly financial verification is due in 3 days. Please upload the generated reports.
                             </p>
-                            <button className="bg-white text-primary px-16 py-8 rounded-lg text-xs font-bold hover:bg-accent transition-all">
+                            <button className="bg-white text-primary px-4 py-2 rounded-lg text-xs font-bold hover:bg-accent transition-all">
                                 Handle Now
                             </button>
                         </div>
-                        <div className="absolute top-0 right-0 p-16 opacity-10">
+                        <div className="absolute top-0 right-0 p-4 opacity-10">
                             <AlertCircle size={80} />
                         </div>
                     </div>
@@ -139,8 +140,6 @@ const AdminOverview = () => {
     );
 };
 
-const Plus = ({ size }) => <Users size={size} />; // Placeholder
-const FileText = ({ size }) => <Users size={size} />; // Placeholder
-const Flag = ({ size }) => <Users size={size} />; // Placeholder
+
 
 export default AdminOverview;

@@ -6,15 +6,43 @@
             "config": {
                 "distDir": "dist"
             }
+        },
+        {
+            "src": "server/server.js",
+            "use": "@vercel/node"
         }
     ],
     "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/server/server.js"
+        },
         {
             "handle": "filesystem"
         },
         {
             "src": "/(.*)",
             "dest": "/index.html"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/index.html",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "no-cache, no-store, must-revalidate"
+                }
+            ]
+        },
+        {
+            "source": "/(.*).(js|css|json)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
         }
     ]
 }

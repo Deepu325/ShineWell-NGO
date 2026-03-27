@@ -16,7 +16,9 @@ const Footer = () => {
             { name: 'Our Origin Story', path: '/about' },
             { name: 'Impact Reports', path: '/impact' },
             { name: 'Stories of Change', path: '/blog' },
+            { name: 'Our Gallery', path: '/gallery' },
             { name: 'Volunteer With Us', path: '/volunteer' },
+
             { name: 'Donate Now', path: '/donate' },
         ],
         legal: [
@@ -101,7 +103,7 @@ const Footer = () => {
                                     <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:text-accent transition-colors">
                                         <MapPin size={18} />
                                     </div>
-                                    <p className="text-sm leading-relaxed">123 Empowerment Way, Okhla Phase III,<br />New Delhi, India 110020</p>
+                                    <p className="text-sm leading-relaxed">#31, W. no. 8, Anusuyamma layout,<br />near Water Filter, Bidadi, Ramanagar 562109</p>
                                 </div>
                                 <div className="flex items-center gap-4 text-gray-400 group">
                                     <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:text-accent transition-colors">

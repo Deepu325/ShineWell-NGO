@@ -16,14 +16,32 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+const allowedOrigins = [
+    "https://shine-well-ngo.vercel.app",
+    "http://localhost:5173",
+    "http://localhost:3000",
+    process.env.CLIENT_URL
+].filter(Boolean);
+
 app.use(cors({
-    origin: "https://shine-well-ngo.vercel.app",
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl) or from allowed origins
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error(`CORS policy: origin ${origin} not allowed`));
+        }
+    },
     credentials: true
 }));
 app.use(morgan('dev'));
 app.use(helmet({
     contentSecurityPolicy: false, // For development ease
 }));
+
+// Serve Static Files
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 
 // Rate limiting
 const limiter = rateLimit({
@@ -47,6 +65,8 @@ app.use('/api/volunteers', require('./routes/volunteerRoutes'));
 app.use('/api/blogs', require('./routes/blogRoutes'));
 app.use('/api/campaigns', require('./routes/campaignRoutes'));
 app.use('/api/impact', require('./routes/impactRoutes'));
+app.use('/api/gallery', require('./routes/galleryRoutes'));
+
 
 // Root path for testing
 app.get('/', (req, res) => {
@@ -63,6 +83,10 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+}
+
+module.exports = app;

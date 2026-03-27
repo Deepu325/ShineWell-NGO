@@ -27,36 +27,36 @@ const AdminLogin = () => {
     };
 
     return (
-        <div className="min-h-screen bg-primary flex items-center justify-center p-24">
+        <div className="min-h-screen bg-primary flex items-center justify-center p-6">
             <div className="max-w-md w-full bg-white rounded-card shadow-2xl overflow-hidden">
-                <div className="p-40 text-center bg-secondary">
-                    <div className="inline-flex p-16 bg-primary rounded-2xl mb-16">
+                <div className="p-10 text-center bg-secondary">
+                    <div className="inline-flex p-4 bg-primary rounded-2xl mb-4">
                         <Heart className="text-accent fill-accent" size={32} />
                     </div>
                     <h1 className="text-2xl font-heading font-bold text-primary">Admin Control</h1>
                     <p className="text-muted">Sign in to manage Shinewell NGO</p>
                 </div>
 
-                <div className="p-40">
-                    <form onSubmit={handleLogin} className="space-y-24">
+                <div className="p-8">
+                    <form onSubmit={handleLogin} className="space-y-6">
                         <div className="relative">
-                            <Mail className="absolute left-16 top-1/2 -translate-y-1/2 text-muted" size={20} />
+                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-muted" size={20} />
                             <input
                                 type="email"
                                 placeholder="Admin Email"
                                 required
-                                className="w-full pl-48 pr-16 py-16 bg-secondary rounded-xl outline-none focus:ring-2 focus:ring-accent"
+                                className="w-full pl-12 pr-4 py-4 bg-secondary rounded-xl outline-none focus:ring-2 focus:ring-accent"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
                         <div className="relative">
-                            <Lock className="absolute left-16 top-1/2 -translate-y-1/2 text-muted" size={20} />
+                            <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-muted" size={20} />
                             <input
                                 type="password"
                                 placeholder="Password"
                                 required
-                                className="w-full pl-48 pr-16 py-16 bg-secondary rounded-xl outline-none focus:ring-2 focus:ring-accent"
+                                className="w-full pl-12 pr-4 py-4 bg-secondary rounded-xl outline-none focus:ring-2 focus:ring-accent"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
@@ -65,17 +65,17 @@ const AdminLogin = () => {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full btn-primary py-16 flex items-center justify-center gap-12 group"
+                            className="w-full btn-primary py-4 flex items-center justify-center gap-3 group"
                         >
                             {loading ? 'Authenticating...' : (
                                 <>
-                                    Enter Dashboard <ArrowRight className="group-hover:translate-x-4 transition-transform" />
+                                    Enter Dashboard <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                                 </>
                             )}
                         </button>
                     </form>
 
-                    <div className="mt-32 text-center">
+                    <div className="mt-8 text-center">
                         <button
                             onClick={() => navigate('/')}
                             className="text-sm font-medium text-muted hover:text-primary transition-colors"

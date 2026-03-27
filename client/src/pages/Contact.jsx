@@ -70,7 +70,7 @@ const Contact = () => {
                                 },
                                 {
                                     title: 'Visit Us',
-                                    details: ['123 Empowerment Way, Okhla Phase III,', 'New Delhi, India 110020'],
+                                    details: ['#31, W. no. 8, Anusuyamma layout,', 'near Water Filter, Bidadi, Ramanagar 562109'],
                                     icon: <MapPin size={24} />
                                 }
                             ].map((item, idx) => (
@@ -188,7 +188,7 @@ const Contact = () => {
                     </div>
                     <div className="aspect-video lg:aspect-[21/9] rounded-panel overflow-hidden border-8 border-white shadow-hero">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112115.11550570887!2d77.1000823!3d28.5818967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347662db%3A0xad635bb36b99d50a!2sDelhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15558.07722791882!2d77.37854655555523!3d12.793395800000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae4587635678bb%3A0xc3c9a63273e93ca9!2sBidadi%2C%20Karnataka%20562109!5e0!3m2!1sen!2sin!4v1741151600000!5m2!1sen!2sin"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}

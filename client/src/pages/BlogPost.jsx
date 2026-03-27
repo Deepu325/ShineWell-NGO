@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Calendar, User, ArrowLeft, Share2, Facebook, Twitter, MessageSquare, Heart } from 'lucide-react';
+import { Calendar, User, Users, ArrowLeft, Share2, Facebook, Twitter, MessageSquare, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 import api from '../services/api';
 

@@ -6,6 +6,8 @@ import {
     Award, TrendingUp, Globe2, Briefcase, Zap
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import GallerySection from '../components/GallerySection';
+
 
 const Home = () => {
     const stats = [
@@ -218,30 +220,9 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Gallery Section */}
-            <section className="layout-section">
-                <div className="container-custom">
-                    <div className="flex justify-between items-end mb-12">
-                        <div>
-                            <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">Gallery</span>
-                            <h2 className="text-4xl font-heading font-bold">Moments of <span className="text-accent">Change</span></h2>
-                        </div>
-                        <Link to="/impact" className="hidden md:flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors">
-                            View All <ArrowRight size={18} />
-                        </Link>
-                    </div>
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                        {[
-                            'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                            'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                            'https://images.unsplash.com/photo-1509099836639-18ba1795216d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                            'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
-                        ].map((img, i) => (
-                            <img key={i} src={img} alt="Impact" className="rounded-card h-64 w-full object-cover hover:opacity-90 transition-opacity cursor-pointer shadow-sm" />
-                        ))}
-                    </div>
-                </div>
-            </section>
+            {/* Dynamic Gallery Section */}
+            <GallerySection />
+
 
             {/* Testimonials Section */}
             <section className="bg-secondary/20 layout-section">
