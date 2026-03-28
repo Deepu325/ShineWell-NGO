@@ -26,7 +26,7 @@ const AdminGallery = () => {
     const fetchGallery = async () => {
         try {
             const { data } = await api.get('/gallery');
-            setGallery(data.data);
+            setGallery(data.data || []);
         } catch (err) {
             toast.error('Failed to load gallery items');
         } finally {

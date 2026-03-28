@@ -17,7 +17,7 @@ const Gallery = () => {
         setLoading(true);
         try {
             const { data } = await api.get('/gallery');
-            setGallery(data.data);
+            setGallery(data.data || []);
         } catch (err) {
             console.error('Failed to fetch gallery', err);
         } finally {

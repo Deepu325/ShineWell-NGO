@@ -10,7 +10,7 @@ const AdminDonations = () => {
         const fetchDonations = async () => {
             try {
                 const { data } = await api.get('/donations');
-                setDonations(data.data);
+                setDonations(data.data || []);
             } catch (err) {
                 console.error('Error fetching donations');
             } finally {

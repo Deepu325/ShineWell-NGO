@@ -13,7 +13,7 @@ const BlogPost = () => {
         const fetchBlog = async () => {
             try {
                 const { data } = await api.get(`/blogs/${slug}`);
-                setBlog(data.data);
+                setBlog(data.data || null);
             } catch (err) {
                 console.error('Error fetching blog');
             } finally {

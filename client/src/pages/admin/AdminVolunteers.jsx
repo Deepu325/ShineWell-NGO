@@ -14,7 +14,7 @@ const AdminVolunteers = () => {
     const fetchVolunteers = async () => {
         try {
             const { data } = await api.get('/volunteers');
-            setVolunteers(data.data);
+            setVolunteers(data.data || []);
         } catch (err) {
             toast.error('Failed to load volunteers');
         } finally {

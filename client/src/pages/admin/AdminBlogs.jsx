@@ -28,7 +28,7 @@ const AdminBlogs = () => {
     const fetchBlogs = async () => {
         try {
             const { data } = await api.get('/blogs');
-            setBlogs(data.data);
+            setBlogs(data.data || []);
         } catch (err) {
             toast.error('Failed to load blog posts');
         } finally {
